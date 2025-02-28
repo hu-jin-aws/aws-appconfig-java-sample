@@ -3,7 +3,7 @@ package com.amazonaws.samples.appconfig.utils;
 import java.math.BigDecimal;
 
 public class MathNewCode {
-    Boolean bool = new Boolean(true);
+    Boolean bool = Boolean.valueOf(false);
     Byte b = new Byte("1");
     Character c = new Character('c');
     Double d = new Double(1.0);
