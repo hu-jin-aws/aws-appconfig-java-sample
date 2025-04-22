@@ -1,2 +1,2 @@
 echo "Test Build Script"
-maven clean install
+mvn clean install
