@@ -2,7 +2,7 @@
 package com.amazonaws.samples.appconfig.utils;
 import java.math.BigDecimal;
 
-public class Math2 {
+public class Math3 {
     Boolean bool = new Boolean(true);
     Byte b = new Byte("1");
     Character c = new Character('c');
