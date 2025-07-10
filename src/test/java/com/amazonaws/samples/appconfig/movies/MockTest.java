@@ -1,24 +1,25 @@
 package com.amazonaws.samples.appconfig.movies;
-import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Matchers.anyInt;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import static org.junit.Assert.assertNull;
 import static org.mockito.Mockito.mock;
 
 
+@SuppressWarnings("unchecked")
 public class MockTest {
 
     @Test
     public void testList() {
 
-        List<String> mocklist = mock(List.class);
+        List<String> mocklist = (List<String>) mock(List.class);
 
         when(mocklist.get(anyInt())).thenReturn("Movies");
 
@@ -29,7 +30,7 @@ public class MockTest {
 
     @Test
     public void creatingASpyOnArrayList() {
-        List<String> listSpy = spy(ArrayList.class);
+        List<String> listSpy = (List<String>) spy(ArrayList.class);
         listSpy.add("Paid");
         listSpy.add("Movies");
         verify(listSpy).add("Paid");
@@ -40,7 +41,7 @@ public class MockTest {
 
     @Test
     public void letsMockListSizeWithMultipleReturnValues() {
-        List list = mock(List.class);
+        List<String> list = (List<String>) mock(List.class);
         Mockito.when(list.size()).thenReturn(10).thenReturn(20);
         assertEquals(10, list.size()); // First Call
         assertEquals(20, list.size()); // Second Call
@@ -49,7 +50,7 @@ public class MockTest {
     @Test
     public void letsMockListGet() {
 
-        List<String> list = mock(List.class);
+        List<String> list = (List<String>) mock(List.class);
 
         Mockito.when(list.get(0)).thenReturn("PaidMovies");
         assertEquals("PaidMovies", list.get(0));
